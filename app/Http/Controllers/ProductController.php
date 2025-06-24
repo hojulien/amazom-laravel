@@ -11,8 +11,11 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        // to do: check Request function to get the Path
+        // if /products, redirect to itself
+
         // with('category') eager loads the category relationship for each product
         // avoids the N+1 query problem by loading all categories in a single query    
         $products = Product::with('category')->get();
@@ -34,14 +37,14 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $product = $request->all();
-        Product::create([$product]);
+        Product::create($product);
         return redirect()->route('products.index')->with('success', 'Product created successfully.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $slug, string $id)
     {
         $product = Product::with('category')->findOrFail($id);
         return view('products.show', compact('product'));

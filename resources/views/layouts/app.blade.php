@@ -9,7 +9,7 @@
 <body>
     <header>
         <nav>
-            <h1>Task Manager</h1>
+            <a href="{{route('products.index')}}" class="no-link"><h1>Amazom</h1></a>
         </nav>
     </header>
     <main>

@@ -16,8 +16,8 @@
                 </div>
                 <p>{{ $product->description }}</p>
                 <p class="price">{{ $product->price }} €</p>
-                <a href="{{ route('products.show', ['slug' => $product->slug, 'id' => $product->id]) }}" class="details no-link">View Details</a>
-                <button>Add to Cart</button>
+                <a href="{{ route('products.show', [$product->slug, $product->id]) }}" class="a-button no-link">View Details</a>
+                <button class="button-cart">Add to Cart</button>
             </div>
         @endforeach
     </div>
