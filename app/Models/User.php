@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role' // si alter table, ne pas oublier de le rajouter dans le fillable
     ];
 
     /**
