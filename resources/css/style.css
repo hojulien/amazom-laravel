@@ -41,6 +41,17 @@ nav h1 {
     margin: 20px 0;
 }
 
+.filter {
+    display: block;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px auto;
+    font-family: inherit;
+    font-size: 1.2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .product hr {
     /* bypasses padding of the parent element */
     width: calc(100% + 40px);

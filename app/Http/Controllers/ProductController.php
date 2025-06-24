@@ -16,10 +16,15 @@ class ProductController extends Controller
         // to do: check Request function to get the Path
         // if /products, redirect to itself
 
-        // with('category') eager loads the category relationship for each product
-        // avoids the N+1 query problem by loading all categories in a single query    
-        $products = Product::with('category')->get();
-        return view('products.index', compact('products'));
+        $categories = Category::all();
+        $products = Product::with('category');
+
+        if ($request->filled('categories')) {
+            $products = $products->where('category_id', $request->input('categories'));
+        }
+
+        $products = $products->get();
+        return view('products.index', compact('products', 'categories'));
     }
 
     /**
