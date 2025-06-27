@@ -10,6 +10,10 @@
     <header>
         <nav>
             <a href="{{route('products.index')}}" class="no-link"><h1>Amazom</h1></a>
+            <div>
+                <a href="{{route('auth.login')}}">Se connecter</a>
+                <a href="{{route('cart.index')}}"><img src="/images/icons/shopping-cart.png" alt="Panier" width="32"></a>
+            </div>
         </nav>
     </header>
     <main>

@@ -5,8 +5,6 @@ Dans le cadre de la formation "Développeur Web et Web mobile" chez Simplon, cec
 - Le framework **Laravel** (PHP) suivant un modèle **MVC** et utilisant SQL pour le stockage des données et l'interaction avec la base de données.
 - **HTML** et **CSS** pour les vues et leur stylisation.
 
-Ce projet a été réalisé durant **la semaine du 23 au 27 juin 2025.**
-
 ## Initialisation
 
 ### 1 - Cloner le projet

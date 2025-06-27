@@ -5,6 +5,7 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CartController;
 
 Route::get('/', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
@@ -22,6 +23,10 @@ Route::get('/categories/{id}/edit', [CategoryController::class, 'edit'])->name('
 Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update');
 Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
 
-Route::get('login', [AuthController::class, 'login']);
+Route::get('login', [AuthController::class, 'login'])->name('auth.login');
 Route::post('login', [AuthController::class, 'doLogin']);
 Route::get('/dashboard', fn() => 'Bienvenue sur le dashboard' . \Auth::user()->name)->name('dashboard.login');
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/add/{productId}', [CartController::class, 'add'])->name('cart.add');
+Route::get('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');

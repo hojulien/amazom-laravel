@@ -25,6 +25,12 @@ class ProductController extends Controller
 
         $products = $products->get();
         return view('products.index', compact('products', 'categories'));
+        /*
+        return view('products.index', [
+            'products' => Product::with('category')->all(),
+            'categories' => Category::all]);
+        }
+        */
     }
 
     /**

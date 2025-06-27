@@ -19,5 +19,5 @@
         </div>
     </div>
 
-    <a href="{{ route('products.index') }}" class="a-button button-return no-link">Return to product list</a>
+    <a href="{{ route('products.index') }}" class="a-button button-400 no-link">Return to product list</a>
 @endsection
